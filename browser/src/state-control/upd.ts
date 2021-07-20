@@ -61,4 +61,4 @@ function toLocalStorage(appState: AppState) {
 }
 
 
-export { _upd, Upd, UpdFunction }
+export { _upd, Upd, UpdFunction, toLocalStorage }

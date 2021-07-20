@@ -17,15 +17,15 @@ function Page(props: Props) {
 	const { stateControl, pageState } = props;
     const { state, upd, upd$ } = stateControl;
     const { appState } = state;
-	const { } = pageState;
+	const { welcomeMessage } = pageState;
 
 	// Hooks
 	const classes = useStyles();
 	const arr = [1,2,3,4,5,6];
 
 	return (<>
-		{arr.map(() => <Checkbox text='check me!' checked={true}/>)}
-		Hello Boiler Plate
+		{arr.map((n: number) => <Checkbox key={n} text='check me!' checked={true}/>)}
+		{welcomeMessage}
     </>);
 }
 

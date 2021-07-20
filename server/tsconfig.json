@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2015",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "lib": ["es2015", "dom", "dom.iterable", "scripthost"],
+        //"jsx": "react",
+        "noEmitOnError": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "server.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

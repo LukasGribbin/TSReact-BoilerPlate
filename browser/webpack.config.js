@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     entry: './src/app.tsx',
     // Remove below line in production
@@ -16,8 +18,8 @@ module.exports = {
         extensions: [ '.tsx', '.ts', '.js', '.d.ts' ],        
     },
     output: {
-        filename: 'index.js',
-        //path: path.resolve(__dirname, 'dist')
+        filename: 'app.min.js',
+        path: path.resolve(path.join(__dirname, '../server/static/'))
     },
     plugins: [
     ],
