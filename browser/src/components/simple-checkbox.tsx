@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { memo } from 'react';
 
@@ -16,7 +15,7 @@ function Checkbox(props: Props) {
     const idStr = Math.random().toString();
 
     function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-        onChanged(event.target.checked);
+        if (onChanged) { onChanged(event.target.checked); }
     }
 
     return (

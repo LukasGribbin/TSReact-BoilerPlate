@@ -33,7 +33,7 @@ function _upd(
 
             if (triggerRender) {
                 setState(appState);
-                toLocalStorage(appState);
+                //toLocalStorage(appState);
             }
 
             return newV_;
@@ -54,9 +54,13 @@ function _upd(
 
 
 function toLocalStorage(appState: AppState) {
+    const { db, ...appState_ } = appState;
+
     localStorage.setItem(
         'app-state', 
-        JSON.stringify(appState)
+        JSON.stringify({
+            appState: appState_
+        })
     );
 }
 

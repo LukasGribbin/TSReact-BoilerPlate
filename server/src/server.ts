@@ -1,24 +1,17 @@
 import * as express from 'express'
-import {routeUser} from './routes/users'
-
-
-//const router = express.Router();
+import path = require('node:path');
+import {exampleCrud} from './routes/example-crud';
 
 const app = express()
 
-//userRouter.get('/aaa')
-
-//app.use("/user", userRouter)
-
-
-routeUser(app);
+exampleCrud(app);
 
 
 // Static files handler
 app.get('/(*.jpg)|(*.svg)|(*.png)', (req, res) => {
     var fileName = req.url;
     //res.end()
-    const file = __dirname + '/static/' + fileName;
+    const file = path.join(__dirname, '/../static/', fileName);
     console.log(file);
 
     res.sendFile(file, { maxAge: '30d' })
@@ -27,15 +20,17 @@ app.get('/(*.jpg)|(*.svg)|(*.png)', (req, res) => {
 // Static files handler
 app.get('/(*.css)|(*.js)|(*.txt)|(*.xml)', (req, res) => {
     var fileName = req.url;
-    res.sendFile(__dirname + '/' + fileName, { maxAge: '5m' });
+    const file = path.join(__dirname, '../', fileName);
+    console.log(file);
+    res.sendFile(file, { maxAge: '5m' });
 });
 
 
 // Static files handler
 app.get('/', (req, res) => {
     //res.end()
-    const file = __dirname + '/static/index.html';
-    //console.log(file);
+    const file = path.join(__dirname, '/../static/index.html');
+    console.log(file);
 
     res.sendFile(file)
 });

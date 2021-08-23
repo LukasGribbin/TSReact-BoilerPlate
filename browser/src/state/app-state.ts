@@ -1,4 +1,4 @@
-
+import { Db } from "./db";
 import { PageState } from "./page-state";
 
 
@@ -9,6 +9,7 @@ interface AppState {
     /** The state version */
     version: number;
     pageState: PageState;
+    db: Db;
 }
 
 

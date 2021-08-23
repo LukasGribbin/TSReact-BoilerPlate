@@ -1,4 +1,5 @@
 import { AppState } from './app-state';
+import { Db, emptyDb } from './db';
 import { PageState } from './page-state';
 
 
@@ -10,7 +11,8 @@ const defaultPageState: PageState = {
 
 const defaultAppState: AppState = {
     version: 3,
-    pageState: defaultPageState
+    pageState: defaultPageState,
+    db: emptyDb
 };
 
 

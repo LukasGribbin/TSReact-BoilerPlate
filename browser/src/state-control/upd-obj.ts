@@ -20,11 +20,11 @@ function _updObj(
         }
         
         let newV_ = { ...v, ...newV };
-        let newState = assocPath(path, newV_, state);
+        let newState = assocPath(path!, newV_, state);
 
         map.delete(v);
-        map.set(newV_,path);
-        weakMap.set(v,path);
+        map.set(newV_,path!);
+        weakMap.set(v,path!);
 
         return { appState: newState.appState, newV_ };
     }
